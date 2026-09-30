@@ -1,1 +1,809 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Portfolio | Bechrir</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fa;
+            color: #1f2937;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #ffffff;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2563eb;
+        }
+
+        .menu {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #2563eb;
+        }
+
+        /* ================= GENERAL ================= */
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 100px 25px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .title h2 {
+            font-size: 36px;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .title p {
+            color: #6b7280;
+        }
+
+        /* ================= ACCUEIL ================= */
+
+        #accueil {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding-top: 130px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text p:first-child {
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .hero-text h1 {
+            font-size: 55px;
+            line-height: 1.1;
+            color: #111827;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 span {
+            color: #2563eb;
+        }
+
+        .hero-text .description {
+            color: #6b7280;
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 600px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 2px solid #2563eb;
+            color: #2563eb;
+        }
+
+        .btn-secondary:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        .profile {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: #dbeafe;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #2563eb;
+            font-size: 35px;
+            font-weight: bold;
+
+            border: 8px solid white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+        }
+
+        /* ================= A PROPOS ================= */
+
+        #apropos {
+            background: white;
+            max-width: none;
+        }
+
+        .about-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #6b7280;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            margin-top: 25px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .info {
+            padding: 15px;
+            background: #f5f7fa;
+            border-radius: 8px;
+        }
+
+        .info strong {
+            color: #2563eb;
+        }
+
+        /* ================= COMPETENCES ================= */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill h3 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+
+        .skill p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* ================= PROJETS ================= */
+
+        #projets {
+            background: white;
+            max-width: none;
+        }
+
+        .projects {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .project-image {
+            height: 160px;
+            background: #dbeafe;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #2563eb;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* ================= VEILLE / STAGES ================= */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .card h3 {
+            color: #2563eb;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        /* ================= CONTACT ================= */
+
+        #contact {
+            text-align: center;
+        }
+
+        .contact-box {
+            background: #2563eb;
+            color: white;
+            padding: 60px 30px;
+            border-radius: 15px;
+        }
+
+        .contact-box h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .contact-box .btn {
+            background: white;
+            color: #2563eb;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #111827;
+            color: #9ca3af;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* ================= TELEPHONE ================= */
+
+        @media (max-width: 800px) {
+
+            .menu {
+                display: none;
+            }
+
+            #accueil {
+                flex-direction: column;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .hero-text h1 {
+                font-size: 42px;
+            }
+
+            .buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .profile {
+                width: 230px;
+                height: 230px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- MENU -->
+
+    <nav>
+        <div class="nav-container">
+
+            <div class="logo">
+                BECHRIR
+            </div>
+
+            <ul class="menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#veille">Veille</a></li>
+                <li><a href="#stages">Stages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- ACCUEIL -->
+
+    <section id="accueil">
+
+        <div class="hero-text">
+
+            <p>MON PORTFOLIO</p>
+
+            <h1>
+                Bonjour, je suis
+                <span>Bechrir</span>
+            </h1>
+
+            <p class="description">
+                Bienvenue sur mon portfolio. Découvrez mon parcours,
+                mes compétences, mes projets et mes expériences
+                dans le domaine de l'informatique.
+            </p>
+
+            <div class="buttons">
+                <a href="#projets" class="btn btn-primary">
+                    Voir mes projets
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Me contacter
+                </a>
+            </div>
+
+        </div>
+
+        <div class="profile">
+            BECHRIR
+        </div>
+
+    </section>
+
+
+    <!-- A PROPOS -->
+
+    <section id="apropos">
+
+        <div class="title">
+            <h2>À propos de moi</h2>
+            <p>Découvrez mon parcours</p>
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <h3>Qui suis-je ?</h3>
+
+                <p>
+                    Je suis Bechrir, étudiant passionné par
+                    l'informatique, le développement web et
+                    les nouvelles technologies.
+                </p>
+
+                <p>
+                    Ce portfolio présente mon parcours,
+                    mes compétences, mes projets ainsi que
+                    mes différentes expériences.
+                </p>
+
+            </div>
+
+            <div class="info-box">
+
+                <div class="info">
+                    <strong>Formation :</strong>
+                    À compléter
+                </div>
+
+                <div class="info">
+                    <strong>Établissement :</strong>
+                    À compléter
+                </div>
+
+                <div class="info">
+                    <strong>Ville :</strong>
+                    À compléter
+                </div>
+
+                <div class="info">
+                    <strong>Objectif :</strong>
+                    À compléter
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMPETENCES -->
+
+    <section id="competences">
+
+        <div class="title">
+            <h2>Mes compétences</h2>
+            <p>Les technologies et domaines que j'utilise</p>
+        </div>
+
+        <div class="skills">
+
+            <div class="skill">
+                <h3>HTML</h3>
+                <p>
+                    Création de pages web structurées
+                    et accessibles.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>CSS</h3>
+                <p>
+                    Mise en forme, design et adaptation
+                    des sites aux différents écrans.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>JavaScript</h3>
+                <p>
+                    Création d'interactions et de
+                    fonctionnalités dynamiques.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>Réseau</h3>
+                <p>
+                    À compléter avec tes compétences
+                    en réseau et systèmes.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>Git / GitHub</h3>
+                <p>
+                    Gestion de projets et versionnement
+                    du code.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>Autres compétences</h3>
+                <p>
+                    Ajoute ici tes autres compétences.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJETS -->
+
+    <section id="projets">
+
+        <div class="title">
+            <h2>Mes projets</h2>
+            <p>Quelques réalisations</p>
+        </div>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <div class="project-image">
+                    PROJET 01
+                </div>
+
+                <div class="project-content">
+                    <h3>Projet web</h3>
+
+                    <p>
+                        Présentation de ton premier projet.
+                        Tu pourras ajouter une image et un
+                        lien vers le projet.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-image">
+                    PROJET 02
+                </div>
+
+                <div class="project-content">
+                    <h3>Projet informatique</h3>
+
+                    <p>
+                        Présentation de ton deuxième projet.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-image">
+                    PROJET 03
+                </div>
+
+                <div class="project-content">
+                    <h3>Projet personnel</h3>
+
+                    <p>
+                        Présentation de ton troisième projet.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- VEILLE -->
+
+    <section id="veille">
+
+        <div class="title">
+            <h2>Veille technologique</h2>
+            <p>Mes recherches et sujets de veille</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Sujet de veille</h3>
+
+                <p>
+                    Ajoute ici ton sujet de veille
+                    technologique.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Actualités</h3>
+
+                <p>
+                    Ajoute ici les articles, informations
+                    et nouveautés que tu as étudiés.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STAGES -->
+
+    <section id="stages">
+
+        <div class="title">
+            <h2>Mes stages</h2>
+            <p>Mes expériences professionnelles</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Stage 1</h3>
+
+                <p>
+                    <strong>Entreprise :</strong>
+                    À compléter
+                </p>
+
+                <p>
+                    <strong>Période :</strong>
+                    À compléter
+                </p>
+
+                <p>
+                    <strong>Missions :</strong>
+                    À compléter
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Stage 2</h3>
+
+                <p>
+                    <strong>Entreprise :</strong>
+                    À compléter
+                </p>
+
+                <p>
+                    <strong>Période :</strong>
+                    À compléter
+                </p>
+
+                <p>
+                    <strong>Missions :</strong>
+                    À compléter
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="contact-box">
+
+            <h2>Contactez-moi</h2>
+
+            <p>
+                Une question ou un projet ?
+                N'hésitez pas à me contacter.
+            </p>
+
+            <a
+                href="mailto:TON-EMAIL@exemple.com"
+                class="btn"
+            >
+                Envoyer un email
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Bechrir — Portfolio
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
