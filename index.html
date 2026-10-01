@@ -332,9 +332,11 @@
             margin-bottom: 30px;
         }
 
+        /* PHOTOS RÉDUITES */
+
         .stage-photo {
-            width: 100%;
-            max-width: 850px;
+            width: 70%;
+            max-width: 650px;
             height: auto;
             display: block;
             margin: 25px auto;
@@ -455,14 +457,19 @@
             font-size: 25px;
         }
 
+        /* PHOTOS BET ARENA RÉDUITES */
+
         .betarena-photo {
-            width: 100%;
-            max-width: 850px;
+            width: 70%;
+            max-width: 650px;
+            height: auto;
             display: block;
             margin: 25px auto;
             border-radius: 12px;
+            object-fit: contain;
             border: 1px solid var(--border);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            background: white;
         }
 
         .report {
@@ -600,6 +607,12 @@
             .bilan-box {
                 padding: 22px;
             }
+
+            .stage-photo,
+            .betarena-photo {
+                width: 90%;
+                max-width: 600px;
+            }
         }
 
         @media (max-width: 500px) {
@@ -624,6 +637,11 @@
             .experience-card,
             .timeline-item {
                 padding: 22px;
+            }
+
+            .stage-photo,
+            .betarena-photo {
+                width: 100%;
             }
         }
     </style>
@@ -724,67 +742,41 @@
         <div class="contact-info">
 
             <div class="info-card">
-
                 <h3>Nom</h3>
-
-                <p>
-                    Sofian Bechrir
-                </p>
-
+                <p>Sofian Bechrir</p>
             </div>
 
             <div class="info-card">
-
                 <h3>Formation</h3>
-
-                <p>
-                    BTS SIO — Services Informatiques aux Organisations
-                </p>
-
+                <p>BTS SIO — Services Informatiques aux Organisations</p>
             </div>
 
             <div class="info-card">
-
                 <h3>Adresse</h3>
-
-                <p>
-                    76160 Darnétal
-                </p>
-
+                <p>76160 Darnétal</p>
             </div>
 
             <div class="info-card">
-
                 <h3>Téléphone</h3>
-
                 <p>
                     <a href="tel:+33695191499">
                         +33 06 95 19 14 99
                     </a>
                 </p>
-
             </div>
 
             <div class="info-card">
-
                 <h3>Email</h3>
-
                 <p>
                     <a href="mailto:sofian.bechrir1@gmail.com">
                         sofian.bechrir1@gmail.com
                     </a>
                 </p>
-
             </div>
 
             <div class="info-card">
-
                 <h3>Permis</h3>
-
-                <p>
-                    Permis B
-                </p>
-
+                <p>Permis B</p>
             </div>
 
         </div>
@@ -814,8 +806,6 @@
 
         <div class="timeline">
 
-            <!-- BTS -->
-
             <div class="timeline-item">
 
                 <h3>BTS SIO</h3>
@@ -841,8 +831,6 @@
             </div>
 
 
-            <!-- SMV -->
-
             <div class="timeline-item">
 
                 <h3>Service Militaire Volontaire</h3>
@@ -864,8 +852,6 @@
 
             </div>
 
-
-            <!-- BAC PRO -->
 
             <div class="timeline-item">
 
@@ -896,7 +882,7 @@
 
 
 <!-- =========================
-     EXPÉRIENCES PROFESSIONNELLES
+     EXPÉRIENCES
 ========================= -->
 
 <section id="experiences">
@@ -915,13 +901,9 @@
         </div>
 
 
-        <!-- MAIRIE JUIN 2026 -->
-
         <div class="experience-card">
 
-            <h3>
-                Mairie de Darnétal
-            </h3>
+            <h3>Mairie de Darnétal</h3>
 
             <p class="date">
                 Juin 2026 — Stage informatique
@@ -938,31 +920,12 @@
             <h4>Missions réalisées</h4>
 
             <ul>
-
-                <li>
-                    Diagnostic et résolution de problèmes informatiques.
-                </li>
-
-                <li>
-                    Installation et configuration de postes informatiques.
-                </li>
-
-                <li>
-                    Maintenance du matériel informatique.
-                </li>
-
-                <li>
-                    Installation et configuration de logiciels.
-                </li>
-
-                <li>
-                    Assistance aux utilisateurs.
-                </li>
-
-                <li>
-                    Vérification du bon fonctionnement des équipements.
-                </li>
-
+                <li>Diagnostic et résolution de problèmes informatiques.</li>
+                <li>Installation et configuration de postes informatiques.</li>
+                <li>Maintenance du matériel informatique.</li>
+                <li>Installation et configuration de logiciels.</li>
+                <li>Assistance aux utilisateurs.</li>
+                <li>Vérification du bon fonctionnement des équipements.</li>
             </ul>
 
             <h4>Compétences développées</h4>
@@ -976,13 +939,9 @@
         </div>
 
 
-        <!-- MAIRIE JANVIER 2026 -->
-
         <div class="experience-card">
 
-            <h3>
-                Mairie de Darnétal
-            </h3>
+            <h3>Mairie de Darnétal</h3>
 
             <p class="date">
                 Janvier 2026 — Agent technique
@@ -1000,28 +959,11 @@
             <h4>Missions réalisées</h4>
 
             <ul>
-
-                <li>
-                    Préparation et déplacement du matériel.
-                </li>
-
-                <li>
-                    Organisation des équipements.
-                </li>
-
-                <li>
-                    Installation du matériel dans les nouveaux locaux.
-                </li>
-
-                <li>
-                    Vérification du fonctionnement des équipements.
-                </li>
-
-                <li>
-                    Travail en équipe pour assurer le bon déroulement
-                    du déménagement.
-                </li>
-
+                <li>Préparation et déplacement du matériel.</li>
+                <li>Organisation des équipements.</li>
+                <li>Installation du matériel dans les nouveaux locaux.</li>
+                <li>Vérification du fonctionnement des équipements.</li>
+                <li>Travail en équipe.</li>
             </ul>
 
             <h4>Compétences développées</h4>
@@ -1035,13 +977,9 @@
         </div>
 
 
-        <!-- KVIA -->
-
         <div class="experience-card">
 
-            <h3>
-                Kvia — Rouen
-            </h3>
+            <h3>Kvia — Rouen</h3>
 
             <p class="date">
                 Octobre 2022 — Stage informatique
@@ -1058,27 +996,11 @@
             <h4>Missions réalisées</h4>
 
             <ul>
-
-                <li>
-                    Maintenance de matériel informatique.
-                </li>
-
-                <li>
-                    Diagnostic de problèmes matériels et logiciels.
-                </li>
-
-                <li>
-                    Installation et configuration de postes.
-                </li>
-
-                <li>
-                    Intervention sur différents équipements informatiques.
-                </li>
-
-                <li>
-                    Participation aux tâches techniques de l'entreprise.
-                </li>
-
+                <li>Maintenance de matériel informatique.</li>
+                <li>Diagnostic de problèmes matériels et logiciels.</li>
+                <li>Installation et configuration de postes.</li>
+                <li>Intervention sur différents équipements informatiques.</li>
+                <li>Participation aux tâches techniques de l'entreprise.</li>
             </ul>
 
             <h4>Compétences développées</h4>
@@ -1091,13 +1013,9 @@
         </div>
 
 
-        <!-- AXEL TELECOM -->
-
         <div class="experience-card">
 
-            <h3>
-                Axel Télécom — Rouen
-            </h3>
+            <h3>Axel Télécom — Rouen</h3>
 
             <p class="date">
                 Septembre 2020 — Stage en réparation mobile
@@ -1113,27 +1031,11 @@
             <h4>Missions réalisées</h4>
 
             <ul>
-
-                <li>
-                    Diagnostic de pannes sur smartphones.
-                </li>
-
-                <li>
-                    Remplacement de composants.
-                </li>
-
-                <li>
-                    Démontage et remontage d'appareils.
-                </li>
-
-                <li>
-                    Vérification du fonctionnement des appareils après intervention.
-                </li>
-
-                <li>
-                    Manipulation d'outils adaptés à la réparation électronique.
-                </li>
-
+                <li>Diagnostic de pannes sur smartphones.</li>
+                <li>Remplacement de composants.</li>
+                <li>Démontage et remontage d'appareils.</li>
+                <li>Vérification du fonctionnement après intervention.</li>
+                <li>Manipulation d'outils adaptés à la réparation électronique.</li>
             </ul>
 
             <h4>Compétences développées</h4>
@@ -1272,71 +1174,25 @@
             <h4>Travail réalisé</h4>
 
             <ul>
-
-                <li>
-                    Préparation du matériel nécessaire à la réalisation
-                    de la liaison.
-                </li>
-
-                <li>
-                    Identification des différents équipements réseau.
-                </li>
-
-                <li>
-                    Réalisation du câblage réseau.
-                </li>
-
-                <li>
-                    Utilisation de câbles RJ45.
-                </li>
-
-                <li>
-                    Raccordement des câbles au niveau du panneau de brassage.
-                </li>
-
-                <li>
-                    Organisation et repérage des différentes connexions.
-                </li>
-
-                <li>
-                    Vérification de la continuité et du bon fonctionnement
-                    de la liaison.
-                </li>
-
-                <li>
-                    Recherche et diagnostic en cas de problème de connexion.
-                </li>
-
+                <li>Préparation du matériel nécessaire.</li>
+                <li>Identification des différents équipements réseau.</li>
+                <li>Réalisation du câblage réseau.</li>
+                <li>Utilisation de câbles RJ45.</li>
+                <li>Raccordement des câbles au niveau du panneau de brassage.</li>
+                <li>Organisation et repérage des différentes connexions.</li>
+                <li>Vérification de la continuité et du bon fonctionnement.</li>
+                <li>Recherche et diagnostic en cas de problème de connexion.</li>
             </ul>
 
             <h4>Compétences mises en œuvre</h4>
 
             <ul>
-
-                <li>
-                    Réalisation d'un câblage réseau.
-                </li>
-
-                <li>
-                    Utilisation de connectiques RJ45.
-                </li>
-
-                <li>
-                    Utilisation d'un panneau de brassage.
-                </li>
-
-                <li>
-                    Organisation d'une installation réseau.
-                </li>
-
-                <li>
-                    Vérification et diagnostic d'une liaison réseau.
-                </li>
-
-                <li>
-                    Respect des règles de câblage.
-                </li>
-
+                <li>Réalisation d'un câblage réseau.</li>
+                <li>Utilisation de connectiques RJ45.</li>
+                <li>Utilisation d'un panneau de brassage.</li>
+                <li>Organisation d'une installation réseau.</li>
+                <li>Vérification et diagnostic d'une liaison réseau.</li>
+                <li>Respect des règles de câblage.</li>
             </ul>
 
             <h4>Bilan</h4>
@@ -1381,35 +1237,13 @@
                 <h3>Informatique</h3>
 
                 <ul>
-
-                    <li>
-                        Diagnostic informatique
-                    </li>
-
-                    <li>
-                        Maintenance matérielle et logicielle
-                    </li>
-
-                    <li>
-                        Installation de postes
-                    </li>
-
-                    <li>
-                        Configuration de logiciels
-                    </li>
-
-                    <li>
-                        Windows
-                    </li>
-
-                    <li>
-                        Office 365
-                    </li>
-
-                    <li>
-                        Déploiement
-                    </li>
-
+                    <li>Diagnostic informatique</li>
+                    <li>Maintenance matérielle et logicielle</li>
+                    <li>Installation de postes</li>
+                    <li>Configuration de logiciels</li>
+                    <li>Windows</li>
+                    <li>Office 365</li>
+                    <li>Déploiement</li>
                 </ul>
 
             </div>
@@ -1420,31 +1254,12 @@
                 <h3>Réseau</h3>
 
                 <ul>
-
-                    <li>
-                        Réseaux informatiques
-                    </li>
-
-                    <li>
-                        Câblage RJ45
-                    </li>
-
-                    <li>
-                        Panneau de brassage
-                    </li>
-
-                    <li>
-                        Liaison entre salles
-                    </li>
-
-                    <li>
-                        Diagnostic réseau
-                    </li>
-
-                    <li>
-                        Maintenance réseau
-                    </li>
-
+                    <li>Réseaux informatiques</li>
+                    <li>Câblage RJ45</li>
+                    <li>Panneau de brassage</li>
+                    <li>Liaison entre salles</li>
+                    <li>Diagnostic réseau</li>
+                    <li>Maintenance réseau</li>
                 </ul>
 
             </div>
@@ -1455,27 +1270,11 @@
                 <h3>Matériel</h3>
 
                 <ul>
-
-                    <li>
-                        Montage et démontage
-                    </li>
-
-                    <li>
-                        Composants informatiques
-                    </li>
-
-                    <li>
-                        Maintenance matériel
-                    </li>
-
-                    <li>
-                        Réparation mobile
-                    </li>
-
-                    <li>
-                        Diagnostic de panne
-                    </li>
-
+                    <li>Montage et démontage</li>
+                    <li>Composants informatiques</li>
+                    <li>Maintenance matériel</li>
+                    <li>Réparation mobile</li>
+                    <li>Diagnostic de panne</li>
                 </ul>
 
             </div>
@@ -1486,27 +1285,11 @@
                 <h3>Qualités professionnelles</h3>
 
                 <ul>
-
-                    <li>
-                        Rigueur
-                    </li>
-
-                    <li>
-                        Organisation
-                    </li>
-
-                    <li>
-                        Autonomie
-                    </li>
-
-                    <li>
-                        Travail en équipe
-                    </li>
-
-                    <li>
-                        Adaptation
-                    </li>
-
+                    <li>Rigueur</li>
+                    <li>Organisation</li>
+                    <li>Autonomie</li>
+                    <li>Travail en équipe</li>
+                    <li>Adaptation</li>
                 </ul>
 
             </div>
@@ -1517,19 +1300,9 @@
                 <h3>Sécurité</h3>
 
                 <ul>
-
-                    <li>
-                        SST
-                    </li>
-
-                    <li>
-                        Certificat valable jusqu'au 26/05/2028
-                    </li>
-
-                    <li>
-                        Sensibilisation aux règles de sécurité
-                    </li>
-
+                    <li>SST</li>
+                    <li>Certificat valable jusqu'au 26/05/2028</li>
+                    <li>Sensibilisation aux règles de sécurité</li>
                 </ul>
 
             </div>
@@ -1540,23 +1313,10 @@
                 <h3>Environnement professionnel</h3>
 
                 <ul>
-
-                    <li>
-                        Assistance aux utilisateurs
-                    </li>
-
-                    <li>
-                        Travail en équipe
-                    </li>
-
-                    <li>
-                        Intervention technique
-                    </li>
-
-                    <li>
-                        Respect des procédures
-                    </li>
-
+                    <li>Assistance aux utilisateurs</li>
+                    <li>Travail en équipe</li>
+                    <li>Intervention technique</li>
+                    <li>Respect des procédures</li>
                 </ul>
 
             </div>
@@ -1609,69 +1369,25 @@
             <h4>Technologies utilisées</h4>
 
             <ul>
-
-                <li>
-                    Java
-                </li>
-
-                <li>
-                    SQLite
-                </li>
-
-                <li>
-                    JDBC
-                </li>
-
-                <li>
-                    Linux
-                </li>
-
-                <li>
-                    Windows 11
-                </li>
-
+                <li>Java</li>
+                <li>SQLite</li>
+                <li>JDBC</li>
+                <li>Linux</li>
+                <li>Windows 11</li>
             </ul>
 
             <h4>Structure du projet</h4>
 
             <ul>
-
-                <li>
-                    Main.java
-                </li>
-
-                <li>
-                    Database.java
-                </li>
-
-                <li>
-                    sports_betting.sqlite
-                </li>
-
-                <li>
-                    sqlite-jdbc-3.53.4.0.jar
-                </li>
-
-                <li>
-                    BetArena.jar
-                </li>
-
-                <li>
-                    build.sh
-                </li>
-
-                <li>
-                    run.sh
-                </li>
-
-                <li>
-                    reset.sh
-                </li>
-
-                <li>
-                    MANIFEST.MF
-                </li>
-
+                <li>Main.java</li>
+                <li>Database.java</li>
+                <li>sports_betting.sqlite</li>
+                <li>sqlite-jdbc-3.53.4.0.jar</li>
+                <li>BetArena.jar</li>
+                <li>build.sh</li>
+                <li>run.sh</li>
+                <li>reset.sh</li>
+                <li>MANIFEST.MF</li>
             </ul>
 
             <h4>Base de données</h4>
@@ -1763,8 +1479,6 @@
                 class="betarena-photo"
             >
 
-
-            <!-- RAPPORT -->
 
             <div class="report">
 
