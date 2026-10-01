@@ -1,222 +1,195 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Portfolio de Sofian Bechrir - Étudiant en BTS SIO, informatique, systèmes et réseaux.">
-
-    <title>Portfolio | Sofian Bechrir</title>
+    <title>Portfolio - Sofian Bechrir</title>
 
     <style>
 
         :root {
             --primary: #2563eb;
             --primary-dark: #1d4ed8;
-            --dark: #111827;
-            --text: #374151;
-            --muted: #6b7280;
-            --light: #f5f7fb;
+            --dark: #0f172a;
+            --text: #334155;
+            --muted: #64748b;
+            --light: #f8fafc;
             --white: #ffffff;
-            --border: #e5e7eb;
-            --success: #16a34a;
+            --border: #e2e8f0;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: var(--light);
             color: var(--text);
-            line-height: 1.7;
+            background: var(--white);
+            line-height: 1.6;
         }
 
         a {
+            text-decoration: none;
             color: inherit;
         }
 
-        /* ==================== MENU ==================== */
+        img {
+            max-width: 100%;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         nav {
-            position: fixed;
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
             z-index: 1000;
+            background: rgba(255, 255, 255, 0.97);
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
         }
 
         .nav-container {
-            max-width: 1180px;
+            max-width: 1200px;
             margin: auto;
-            padding: 16px 25px;
+            padding: 15px 25px;
+
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            gap: 20px;
         }
 
         .logo {
-            font-size: 23px;
-            font-weight: 800;
+            font-size: 22px;
+            font-weight: bold;
             color: var(--primary);
-            text-decoration: none;
+            white-space: nowrap;
         }
 
         .menu {
-            display: flex;
-            gap: 20px;
             list-style: none;
+            display: flex;
             flex-wrap: wrap;
             justify-content: flex-end;
+            gap: 8px;
         }
 
         .menu a {
-            text-decoration: none;
-            color: var(--text);
-            font-weight: 600;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 8px;
             font-size: 14px;
-            transition: 0.25s;
+            color: var(--text);
+            transition: 0.2s;
         }
 
         .menu a:hover {
+            background: #eff6ff;
             color: var(--primary);
         }
 
-        /* ==================== GENERAL ==================== */
+        /* =========================
+           SECTIONS
+        ========================= */
 
         section {
-            max-width: 1180px;
-            margin: auto;
-            padding: 100px 25px;
-            scroll-margin-top: 70px;
+            padding: 80px 25px;
         }
 
         .white-section {
-            max-width: none;
-            background: white;
+            background: var(--white);
         }
 
         .inner {
-            max-width: 1180px;
+            max-width: 1100px;
             margin: auto;
         }
 
         .title {
             text-align: center;
-            margin-bottom: 48px;
+            margin-bottom: 50px;
         }
 
         .title h2 {
             font-size: 36px;
             color: var(--dark);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .title p {
             color: var(--muted);
         }
 
-        /* ==================== ACCUEIL ==================== */
+        /* =========================
+           ACCUEIL
+        ========================= */
 
         #accueil {
-            min-height: 100vh;
+            min-height: 90vh;
+            background:
+                linear-gradient(
+                    135deg,
+                    #eff6ff 0%,
+                    #ffffff 55%,
+                    #f8fafc 100%
+                );
+
             display: flex;
             align-items: center;
-            justify-content: space-between;
+        }
+
+        .hero {
+            max-width: 1100px;
+            width: 100%;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
             gap: 60px;
-            padding-top: 140px;
-        }
-
-        .hero-text {
-            flex: 1;
-        }
-
-        .eyebrow {
-            color: var(--primary);
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 12px;
+            align-items: center;
         }
 
         .hero-text h1 {
-            font-size: clamp(42px, 6vw, 68px);
-            line-height: 1.05;
+            font-size: 54px;
+            line-height: 1.1;
             color: var(--dark);
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
         .hero-text h1 span {
             color: var(--primary);
         }
 
-        .hero-subtitle {
-            font-size: 21px;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 14px;
-        }
-
-        .description {
-            color: var(--muted);
-            font-size: 17px;
-            max-width: 720px;
-        }
-
-        .buttons {
-            margin-top: 28px;
-            display: flex;
-            gap: 13px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 21px;
-            border-radius: 9px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: 0.25s;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            border: 2px solid var(--primary);
+        .hero-text h2 {
+            font-size: 24px;
             color: var(--primary);
+            margin-bottom: 20px;
         }
 
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: white;
+        .hero-text p {
+            font-size: 18px;
+            color: var(--muted);
+            max-width: 650px;
         }
-
-        /* ==================== PHOTO PROFIL ==================== */
 
         .profile-card {
-            width: 330px;
-            min-width: 280px;
-            padding: 35px 25px;
-            border-radius: 24px;
-            background: white;
-            border: 1px solid var(--border);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.09);
+            background: var(--white);
+            padding: 35px;
+            border-radius: 22px;
             text-align: center;
+            border: 1px solid var(--border);
+            box-shadow: 0 15px 45px rgba(37, 99, 235, 0.12);
         }
 
         .profile-photo {
@@ -234,6 +207,7 @@
         .profile-card h3 {
             color: var(--dark);
             margin-bottom: 5px;
+            font-size: 24px;
         }
 
         .profile-card p {
@@ -241,104 +215,90 @@
             font-size: 14px;
         }
 
-        /* ==================== COORDONNEES ==================== */
+        /* =========================
+           COORDONNEES
+        ========================= */
+
+        #coordonnees {
+            background: var(--light);
+        }
 
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-top: 35px;
-        }
-
-        .contact-item {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 18px;
-            text-align: center;
-        }
-
-        .contact-item strong {
-            display: block;
-            color: var(--primary);
-            margin-bottom: 4px;
-        }
-
-        .contact-item a {
-            text-decoration: none;
-        }
-
-        .contact-item a:hover {
-            color: var(--primary);
-        }
-
-        /* ==================== PARCOURS ==================== */
-
-        .timeline {
-            position: relative;
-            max-width: 950px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 900px;
             margin: auto;
         }
 
-        .timeline::before {
-            content: "";
-            position: absolute;
-            left: 17px;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: #dbeafe;
+        .contact-card {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+        }
+
+        .contact-card h3 {
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .contact-card p {
+            color: var(--text);
+        }
+
+        /* =========================
+           PARCOURS
+        ========================= */
+
+        #parcours {
+            background: white;
+        }
+
+        .timeline {
+            max-width: 900px;
+            margin: auto;
         }
 
         .timeline-item {
             position: relative;
-            padding-left: 55px;
-            margin-bottom: 30px;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 7px;
-            top: 5px;
-            width: 23px;
-            height: 23px;
-            border-radius: 50%;
-            background: var(--primary);
-            border: 5px solid #dbeafe;
-        }
-
-        .timeline-card {
+            padding: 25px 30px;
+            margin-bottom: 25px;
             background: var(--light);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 23px;
+            border-left: 5px solid var(--primary);
+            border-radius: 12px;
         }
 
-        .timeline-date {
-            display: inline-block;
+        .timeline-item h3 {
             color: var(--primary);
-            font-weight: 800;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
-        .timeline-card h3 {
+        .timeline-item .date {
+            font-weight: bold;
             color: var(--dark);
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
-        .timeline-card p {
+        .timeline-item p {
             color: var(--muted);
         }
 
-        /* ==================== EXPERIENCES ==================== */
+        /* =========================
+           EXPERIENCES
+        ========================= */
 
-        .cards {
+        #situations {
+            background: var(--light);
+        }
+
+        .experience-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 25px;
         }
 
-        .card {
+        .experience-card {
             background: white;
             padding: 30px;
             border-radius: 16px;
@@ -346,120 +306,130 @@
             box-shadow: 0 7px 25px rgba(0, 0, 0, 0.05);
         }
 
-        .card h3 {
+        .experience-card h3 {
             color: var(--primary);
             margin-bottom: 8px;
-            font-size: 21px;
         }
 
-        .card h4 {
+        .experience-card .date {
+            font-weight: bold;
             color: var(--dark);
-            margin: 22px 0 8px;
+            margin-bottom: 15px;
         }
 
-        .card p {
-            color: var(--muted);
-            margin-bottom: 10px;
-        }
-
-        .card ul {
-            padding-left: 20px;
+        .experience-card p {
             color: var(--muted);
         }
 
-        .card li {
-            margin-bottom: 6px;
+        /* =========================
+           PHOTOS DES STAGES
+        ========================= */
+
+        #photos-stages {
+            background: white;
         }
 
-        .tag {
-            display: inline-block;
-            margin-top: 8px;
-            margin-right: 5px;
-            padding: 5px 10px;
-            border-radius: 20px;
-            background: #eff6ff;
+        .stage-photos-box {
+            max-width: 950px;
+            margin: auto;
+            background: var(--light);
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid var(--border);
+            box-shadow: 0 7px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .stage-photos-box h3 {
+            text-align: center;
             color: var(--primary);
-            font-size: 12px;
-            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 25px;
         }
 
-        /* ==================== RESEAU ==================== */
+        .stage-photos-box > p {
+            text-align: center;
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
+
+        .stage-photo {
+            width: 100%;
+            max-width: 850px;
+            height: auto;
+            display: block;
+            margin: 25px auto;
+            border-radius: 12px;
+            object-fit: contain;
+            box-sizing: border-box;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            background: white;
+        }
+
+        /* =========================
+           RESEAU
+        ========================= */
+
+        #reseau {
+            background: var(--light);
+        }
 
         .network-box {
-            background: linear-gradient(135deg, #eff6ff, #ffffff);
-            border: 1px solid #bfdbfe;
-            border-radius: 18px;
+            max-width: 900px;
+            margin: auto;
+            background: white;
             padding: 35px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            text-align: center;
         }
 
         .network-box h3 {
             color: var(--primary);
-            margin-top: 25px;
             margin-bottom: 15px;
         }
 
-        .network-box h3:first-child {
-            margin-top: 0;
+        .network-box p {
+            color: var(--muted);
         }
 
-        .network-box ol,
-        .network-box ul {
-            padding-left: 23px;
-        }
+        /* =========================
+           COMPETENCES
+        ========================= */
 
-        .network-box li {
-            margin-bottom: 10px;
-        }
-
-        /* ==================== COMPETENCES ==================== */
-
-        .skill-groups {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
-        }
-
-        .skill-group {
+        #competences {
             background: white;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 30px;
         }
 
-        .skill-group h3 {
-            color: var(--primary);
-            margin-bottom: 18px;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skill-pill {
-            padding: 9px 13px;
+        .skill-card {
             background: var(--light);
+            padding: 25px;
+            border-radius: 14px;
             border: 1px solid var(--border);
-            border-radius: 8px;
-            color: var(--text);
-            font-weight: 600;
-            font-size: 14px;
         }
 
-        .certification {
-            margin-top: 25px;
-            padding: 22px;
-            border-left: 5px solid var(--success);
-            background: #f0fdf4;
-            border-radius: 10px;
+        .skill-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
         }
 
-        .certification strong {
-            color: #166534;
+        .skill-card ul {
+            padding-left: 20px;
         }
 
-        /* ==================== PROJETS PERSONNELS ==================== */
+        .skill-card li {
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           PROJETS PERSONNELS
+        ========================= */
 
         #projets-personnels {
             background: var(--light);
@@ -493,8 +463,6 @@
             margin-bottom: 8px;
         }
 
-        /* ==================== PHOTOS BET ARENA ==================== */
-
         .photos-title {
             text-align: center;
             margin: 50px 0 30px;
@@ -522,8 +490,6 @@
             border: 1px solid var(--border);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
         }
-
-        /* ==================== COMPTE RENDU ==================== */
 
         .report {
             max-width: 900px;
@@ -559,141 +525,167 @@
             margin-bottom: 7px;
         }
 
-        /* ==================== BILAN ==================== */
+        /* =========================
+           BILAN
+        ========================= */
 
-        .perspectives {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px;
+        #bilan {
+            background: white;
         }
 
-        .perspective-card {
-            background: white;
-            padding: 30px;
+        .bilan-box {
+            max-width: 900px;
+            margin: auto;
+            background: var(--light);
+            padding: 35px;
             border-radius: 16px;
             border: 1px solid var(--border);
         }
 
-        .perspective-card h3 {
+        .bilan-box h3 {
             color: var(--primary);
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
-        .perspective-card p {
+        .bilan-box p {
             color: var(--muted);
+            margin-bottom: 15px;
         }
 
-        /* ==================== CONTACT ==================== */
+        /* =========================
+           CONTACT
+        ========================= */
 
         #contact {
+            background: var(--light);
+        }
+
+        .contact-final {
+            max-width: 800px;
+            margin: auto;
             text-align: center;
-        }
-
-        .contact-box {
-            background: var(--dark);
-            color: white;
-            padding: 60px 30px;
-            border-radius: 20px;
-        }
-
-        .contact-box h2 {
-            font-size: 38px;
-            margin-bottom: 12px;
-        }
-
-        .contact-box p {
-            color: #d1d5db;
-            margin-bottom: 25px;
-        }
-
-        .contact-box .btn {
             background: white;
-            color: var(--primary);
-            margin: 5px;
+            padding: 40px;
+            border-radius: 18px;
+            border: 1px solid var(--border);
         }
 
-        /* ==================== FOOTER ==================== */
+        .contact-final h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .contact-final p {
+            margin-bottom: 10px;
+        }
+
+        .contact-final a {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            background: #0b1120;
-            color: #9ca3af;
+            background: var(--dark);
+            color: white;
             text-align: center;
-            padding: 25px;
+            padding: 30px 20px;
         }
 
-        /* ==================== RESPONSIVE ==================== */
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        footer .small {
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
 
         @media (max-width: 900px) {
 
-            .menu {
-                gap: 10px;
-            }
-
-            .menu a {
-                font-size: 12px;
-            }
-
-            #accueil {
-                flex-direction: column;
+            .hero {
+                grid-template-columns: 1fr;
                 text-align: center;
             }
 
-            .description {
+            .hero-text p {
                 margin: auto;
             }
 
-            .buttons {
-                justify-content: center;
+            .hero-text h1 {
+                font-size: 44px;
             }
 
-            .contact-grid {
-                grid-template-columns: 1fr 1fr;
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            .cards,
-            .skill-groups,
-            .perspectives {
+            .experience-grid {
                 grid-template-columns: 1fr;
             }
+
         }
 
         @media (max-width: 650px) {
 
-            .nav-container {
-                padding: 12px 15px;
+            section {
+                padding: 60px 15px;
             }
 
-            .logo {
-                font-size: 18px;
+            .nav-container {
+                flex-direction: column;
             }
 
             .menu {
-                display: none;
+                justify-content: center;
             }
 
-            section {
-                padding: 80px 18px;
-            }
-
-            .profile-card {
-                width: 100%;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
+            .menu a {
+                font-size: 13px;
+                padding: 7px 8px;
             }
 
             .title h2 {
                 font-size: 30px;
             }
 
-            .card,
-            .skill-group,
-            .perspective-card,
+            .hero-text h1 {
+                font-size: 38px;
+            }
+
+            .hero-text h2 {
+                font-size: 20px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-photo {
+                width: 145px;
+                height: 145px;
+            }
+
             .project-box,
-            .report {
+            .report,
+            .stage-photos-box,
+            .bilan-box,
+            .contact-final {
                 padding: 22px;
             }
+
         }
 
     </style>
@@ -701,17 +693,17 @@
 
 <body>
 
-    <!-- ====================================================== -->
-    <!-- MENU -->
-    <!-- ====================================================== -->
+    <!-- =========================
+         MENU
+    ========================= -->
 
     <nav>
 
         <div class="nav-container">
 
-            <a href="#accueil" class="logo">
-                BECHRIR
-            </a>
+            <div class="logo">
+                Sofian Bechrir
+            </div>
 
             <ul class="menu">
 
@@ -725,6 +717,10 @@
 
                 <li>
                     <a href="#situations">Expériences</a>
+                </li>
+
+                <li>
+                    <a href="#photos-stages">Photos des stages</a>
                 </li>
 
                 <li>
@@ -754,79 +750,62 @@
     </nav>
 
 
-    <!-- ====================================================== -->
-    <!-- ACCUEIL -->
-    <!-- ====================================================== -->
+    <!-- =========================
+         ACCUEIL
+    ========================= -->
 
     <section id="accueil">
 
-        <div class="hero-text">
+        <div class="hero">
 
-            <p class="eyebrow">
-                Mon portfolio
-            </p>
+            <div class="hero-text">
 
-            <h1>
-                Sofian <span>Bechrir</span>
-            </h1>
+                <h1>
+                    Bonjour, je suis
+                    <span>Sofian Bechrir</span>
+                </h1>
 
-            <p class="hero-subtitle">
-                Étudiant en BTS SIO – Services Informatiques aux Organisations
-            </p>
+                <h2>
+                    BTS SIO – Services Informatiques aux Organisations
+                </h2>
 
-            <p class="description">
-                Lycée Chaptal – Quimper. Titulaire d’un Bac Pro Systèmes Numériques,
-                option Réseaux informatiques et systèmes communicants, je suis actuellement
-                en première année de BTS SIO.
-            </p>
-
-            <p class="description" style="margin-top: 12px;">
-                Rigoureux, autonome et immédiatement opérationnel, je souhaite mettre
-                mes compétences techniques et mon sens du travail en équipe au service
-                d’une structure professionnelle.
-            </p>
-
-            <div class="buttons">
-
-                <a href="#situations" class="btn btn-primary">
-                    Découvrir mes expériences
-                </a>
-
-                <a href="#contact" class="btn btn-secondary">
-                    Me contacter
-                </a>
+                <p>
+                    Bienvenue sur mon portfolio. Vous trouverez ici mon
+                    parcours, mes expériences professionnelles, mes
+                    compétences ainsi que mes projets informatiques.
+                </p>
 
             </div>
 
-        </div>
 
+            <div class="profile-card">
 
-        <div class="profile-card">
+                <img
+                    src="F29C3420-779A-4D6F-82C6-2F4F375375A8.jpeg"
+                    alt="Photo de Sofian Bechrir"
+                    class="profile-photo"
+                >
 
-            <img
-                src="F29C3420-779A-4D6F-82C6-2F4F375375A8.jpeg"
-                alt="Photo de Sofian Bechrir"
-                class="profile-photo"
-            >
+                <h3>
+                    Sofian Bechrir
+                </h3>
 
-            <h3>
-                Sofian Bechrir
-            </h3>
+                <p>
+                    BTS SIO • Informatique • Systèmes & Réseaux
+                </p>
 
-            <p>
-                BTS SIO • Informatique • Systèmes & Réseaux
-            </p>
+            </div>
 
         </div>
 
     </section>
 
 
-    <!-- ====================================================== -->
-    <!-- COORDONNEES -->
-    <!-- ====================================================== -->
+    <!-- =========================
+         COORDONNEES
+    ========================= -->
 
-    <section id="coordonnees" class="white-section">
+    <section id="coordonnees">
 
         <div class="inner">
 
@@ -837,7 +816,7 @@
                 </h2>
 
                 <p>
-                    Les informations utiles pour me contacter
+                    Mes informations de contact
                 </p>
 
             </div>
@@ -845,50 +824,54 @@
 
             <div class="contact-grid">
 
-                <div class="contact-item">
+                <div class="contact-card">
 
-                    <strong>
+                    <h3>
                         Email
-                    </strong>
+                    </h3>
 
-                    <a href="mailto:sofian.bechrir1@gmail.com">
+                    <p>
                         sofian.bechrir1@gmail.com
-                    </a>
+                    </p>
 
                 </div>
 
 
-                <div class="contact-item">
+                <div class="contact-card">
 
-                    <strong>
+                    <h3>
                         Téléphone
-                    </strong>
+                    </h3>
 
-                    <a href="tel:+33695191499">
+                    <p>
                         +33 06 95 19 14 99
-                    </a>
+                    </p>
 
                 </div>
 
 
-                <div class="contact-item">
+                <div class="contact-card">
 
-                    <strong>
-                        Localisation
-                    </strong>
+                    <h3>
+                        Adresse
+                    </h3>
 
-                    76160 Darnétal
+                    <p>
+                        76160 Darnétal
+                    </p>
 
                 </div>
 
 
-                <div class="contact-item">
+                <div class="contact-card">
 
-                    <strong>
+                    <h3>
                         Permis
-                    </strong>
+                    </h3>
 
-                    Permis B
+                    <p>
+                        Permis B
+                    </p>
 
                 </div>
 
@@ -899,37 +882,34 @@
     </section>
 
 
-    <!-- ====================================================== -->
-    <!-- PARCOURS -->
-    <!-- ====================================================== -->
+    <!-- =========================
+         PARCOURS
+    ========================= -->
 
     <section id="parcours">
 
-        <div class="title">
+        <div class="inner">
 
-            <h2>
-                Mon parcours
-            </h2>
+            <div class="title">
 
-            <p>
-                Formation, expériences et professionnalisation
-            </p>
+                <h2>
+                    Parcours
+                </h2>
 
-        </div>
+                <p>
+                    Ma formation et mon parcours scolaire
+                </p>
+
+            </div>
 
 
-        <div class="timeline">
+            <div class="timeline">
 
+                <div class="timeline-item">
 
-            <div class="timeline-item">
-
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-card">
-
-                    <span class="timeline-date">
-                        2026 – aujourd’hui
-                    </span>
+                    <div class="date">
+                        2026 – Aujourd'hui
+                    </div>
 
                     <h3>
                         BTS SIO – Services Informatiques aux Organisations
@@ -941,666 +921,145 @@
 
                 </div>
 
-            </div>
 
+                <div class="timeline-item">
 
-            <div class="timeline-item">
-
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-card">
-
-                    <span class="timeline-date">
-                        Février 2026 → Juillet 2026
-                    </span>
-
-                    <h3>
-                        Volontaire Stagiaire – Service Militaire Volontaire
-                    </h3>
-
-                    <p>
-                        SMV – Brest
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-card">
-
-                    <span class="timeline-date">
+                    <div class="date">
                         2024
-                    </span>
+                    </div>
 
                     <h3>
-                        Bac Professionnel Systèmes Numériques
+                        Bac Pro SN – Option C
                     </h3>
 
                     <p>
-                        Option C – Réseaux informatiques et systèmes communicants
-                        • Lycée des Métiers Les 4 Cantons – Grieu
+                        Réseaux informatiques et systèmes communicants
+                        <br>
+                        Lycée des Métiers Les 4 Cantons – Grieu
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="date">
+                        Février 2026 – Juillet 2026
+                    </div>
+
+                    <h3>
+                        Service Militaire Volontaire – SMV Brest
+                    </h3>
+
+                    <p>
+                        Expérience permettant de développer l'autonomie,
+                        la rigueur et les compétences professionnelles.
                     </p>
 
                 </div>
 
             </div>
-
-
-            <div class="timeline-item">
-
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-card">
-
-                    <span class="timeline-date">
-                        Expériences professionnelles
-                    </span>
-
-                    <h3>
-                        Technicien informatique stagiaire – Mairie de Darnétal
-                    </h3>
-
-                    <p>
-                        Juin 2026
-                    </p>
-
-                    <h3 style="margin-top: 12px;">
-                        Agent technique – Mairie de Darnétal
-                    </h3>
-
-                    <p>
-                        Janvier 2026
-                    </p>
-
-                    <h3 style="margin-top: 12px;">
-                        Technicien informatique stagiaire – Kvia, Rouen
-                    </h3>
-
-                    <p>
-                        Octobre 2022
-                    </p>
-
-                    <h3 style="margin-top: 12px;">
-                        Technicien téléphonie mobile stagiaire – Axel Télécom, Rouen
-                    </h3>
-
-                    <p>
-                        Septembre 2020
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="certification">
-
-            <strong>
-                Certification SST :
-            </strong>
-
-            Sauveteur Secouriste du Travail –
-            validité jusqu’au 26/05/2028.
 
         </div>
 
     </section>
 
 
-    <!-- ====================================================== -->
-    <!-- EXPERIENCES PROFESSIONNELLES -->
-    <!-- ====================================================== -->
+    <!-- =========================
+         EXPERIENCES
+    ========================= -->
 
-    <section id="situations" class="white-section">
+    <section id="situations">
 
         <div class="inner">
 
             <div class="title">
 
                 <h2>
-                    Situations professionnelles
+                    Expériences professionnelles
                 </h2>
 
                 <p>
-                    Des expériences concrètes qui illustrent mes compétences
+                    Mes différentes expériences dans le domaine informatique
+                    et technique
                 </p>
 
             </div>
 
 
-            <div class="cards">
+            <div class="experience-grid">
 
 
-                <!-- EXPERIENCE 1 -->
-
-                <article class="card">
+                <div class="experience-card">
 
                     <h3>
-                        1. Technicien informatique stagiaire
+                        Mairie de Darnétal
                     </h3>
 
-                    <p>
-                        <strong>
-                            Mairie de Darnétal – Juin 2026
-                        </strong>
-                    </p>
-
-                    <h4>
-                        Contexte et objectifs
-                    </h4>
+                    <div class="date">
+                        Juin 2026 – Stage informatique
+                    </div>
 
                     <p>
-                        Stage réalisé au sein du service informatique de la Mairie de Darnétal.
-                        L’objectif était d’assurer la maintenance du parc informatique communal
-                        et de participer au déploiement de solutions logicielles.
+                        Stage réalisé au sein de la Mairie de Darnétal
+                        dans le domaine de l'informatique.
                     </p>
 
-                    <h4>
-                        Missions réalisées
-                    </h4>
-
-                    <ul>
-
-                        <li>
-                            Maintenance préventive et curative des postes de travail
-                        </li>
-
-                        <li>
-                            Diagnostic et résolution de pannes matérielles et logicielles
-                        </li>
-
-                        <li>
-                            Déploiement et mise à niveau de systèmes Windows
-                        </li>
-
-                        <li>
-                            Installation et configuration de Microsoft Office 365
-                        </li>
-
-                        <li>
-                            Support de premier niveau auprès des agents municipaux
-                        </li>
-
-                    </ul>
-
-                    <h4>
-                        Compétences mobilisées
-                    </h4>
-
-                    <ul>
-
-                        <li>
-                            Diagnostic et résolution de pannes
-                        </li>
-
-                        <li>
-                            Administration de base de postes Windows
-                        </li>
-
-                        <li>
-                            Déploiement de solutions logicielles
-                        </li>
-
-                        <li>
-                            Relation utilisateur et support technique
-                        </li>
-
-                        <li>
-                            Respect des procédures et de la confidentialité
-                        </li>
-
-                    </ul>
-
-                    <h4>
-                        Bilan
-                    </h4>
-
-                    <p>
-                        Cette expérience m’a permis de confronter mes connaissances du Bac Pro SN
-                        à un environnement professionnel réel. J’ai développé mon autonomie dans
-                        le diagnostic et renforcé mon aisance dans le support utilisateur.
-                    </p>
-
-                    <span class="tag">
-                        Support informatique
-                    </span>
-
-                    <span class="tag">
-                        Windows
-                    </span>
-
-                    <span class="tag">
-                        Office 365
-                    </span>
-
-                </article>
+                </div>
 
 
-                <!-- EXPERIENCE 2 -->
-
-                <article class="card">
+                <div class="experience-card">
 
                     <h3>
-                        2. Agent technique – Déménagement d’un centre social
+                        Mairie de Darnétal
                     </h3>
 
-                    <p>
-                        <strong>
-                            Mairie de Darnétal – Janvier 2026
-                        </strong>
-                    </p>
-
-                    <h4>
-                        Contexte et objectifs
-                    </h4>
+                    <div class="date">
+                        Janvier 2026 – Agent technique
+                    </div>
 
                     <p>
-                        Mission technique dans le cadre du déménagement d’un centre social municipal.
-                        L’objectif était d’assurer le déploiement et la mise en service du matériel
-                        informatique et réseau sur le nouveau site.
+                        Participation au déplacement d'un centre social
+                        et réalisation de différentes tâches techniques.
                     </p>
 
-                    <h4>
-                        Missions réalisées
-                    </h4>
-
-                    <ul>
-
-                        <li>
-                            Logistique et transport du matériel informatique
-                        </li>
-
-                        <li>
-                            Installation physique des postes et imprimantes
-                        </li>
-
-                        <li>
-                            Configuration réseau, connexion, adressage et tests
-                        </li>
-
-                        <li>
-                            Mise en service complète des équipements
-                        </li>
-
-                        <li>
-                            Vérification du fonctionnement avant réception
-                        </li>
-
-                    </ul>
-
-                    <h4>
-                        Compétences mobilisées
-                    </h4>
-
-                    <ul>
-
-                        <li>
-                            Installation et configuration de postes
-                        </li>
-
-                        <li>
-                            Notions de réseau local
-                        </li>
-
-                        <li>
-                            Organisation et gestion de projet terrain
-                        </li>
-
-                        <li>
-                            Travail en équipe et coordination
-                        </li>
-
-                        <li>
-                            Rigueur et respect des délais
-                        </li>
-
-                    </ul>
-
-                    <h4>
-                        Bilan
-                    </h4>
-
-                    <p>
-                        Cette mission m’a permis de mettre en pratique mes compétences techniques
-                        dans un contexte de contrainte forte et de développer mon organisation
-                        ainsi que ma capacité à travailler efficacement en équipe.
-                    </p>
-
-                    <span class="tag">
-                        Réseau
-                    </span>
-
-                    <span class="tag">
-                        Déploiement
-                    </span>
-
-                    <span class="tag">
-                        Travail en équipe
-                    </span>
-
-                </article>
+                </div>
 
 
-                <!-- EXPERIENCE 3 -->
-
-                <article class="card">
+                <div class="experience-card">
 
                     <h3>
-                        3. Technicien informatique stagiaire
+                        Kvia – Rouen
                     </h3>
 
-                    <p>
-                        <strong>
-                            Entreprise Kvia – Rouen – Octobre 2022
-                        </strong>
-                    </p>
-
-                    <h4>
-                        Contexte et objectifs
-                    </h4>
+                    <div class="date">
+                        Octobre 2022 – Stage informatique
+                    </div>
 
                     <p>
-                        Stage en atelier de réparation informatique.
-                        Objectif : assurer le diagnostic et la réparation
-                        de matériel informatique grand public.
+                        Découverte et pratique de différentes activités
+                        liées à l'informatique et à la maintenance.
                     </p>
 
-                    <h4>
-                        Missions réalisées
-                    </h4>
-
-                    <ul>
-
-                        <li>
-                            Diagnostic de pannes matérielles et logicielles
-                        </li>
-
-                        <li>
-                            Remplacement d’écrans, claviers, nappes et disques
-                        </li>
-
-                        <li>
-                            Accueil et conseil technique auprès des clients
-                        </li>
-
-                        <li>
-                            Gestion des ventes de produits et accessoires
-                        </li>
-
-                        <li>
-                            Suivi des interventions et restitution du matériel
-                        </li>
-
-                    </ul>
-
-                    <h4>
-                        Compétences mobilisées
-                    </h4>
-
-                    <ul>
-
-                        <li>
-                            Diagnostic matériel et logiciel
-                        </li>
-
-                        <li>
-                            Remplacement de composants
-                        </li>
-
-                        <li>
-                            Relation client et conseil technique
-                        </li>
-
-                        <li>
-                            Gestion des stocks et des ventes
-                        </li>
-
-                        <li>
-                            Rigueur et méthode
-                        </li>
-
-                    </ul>
-
-                    <h4>
-                        Bilan
-                    </h4>
-
-                    <p>
-                        Cette expérience m’a permis d’acquérir une solide base
-                        en réparation hardware et de développer mon aisance
-                        relationnelle avec les clients.
-                    </p>
-
-                    <span class="tag">
-                        Hardware
-                    </span>
-
-                    <span class="tag">
-                        Réparation
-                    </span>
-
-                    <span class="tag">
-                        Relation client
-                    </span>
-
-                </article>
+                </div>
 
 
-                <!-- EXPERIENCE 4 -->
-
-                <article class="card">
+                <div class="experience-card">
 
                     <h3>
-                        4. Technicien téléphonie mobile
+                        Axel Télécom – Rouen
                     </h3>
 
-                    <p>
-                        <strong>
-                            Axel Télécom – Rouen – Septembre 2020
-                        </strong>
-                    </p>
-
-                    <h4>
-                        Contexte et objectifs
-                    </h4>
+                    <div class="date">
+                        Septembre 2020 – Stage
+                    </div>
 
                     <p>
-                        Stage en magasin de réparation de smartphones et tablettes.
-                        Objectif : assurer le diagnostic et la réparation de terminaux
-                        mobiles, ainsi que l’accueil client.
+                        Découverte de la réparation de téléphones
+                        et du matériel électronique.
                     </p>
 
-                    <h4>
-                        Missions réalisées
-                    </h4>
-
-                    <ul>
-
-                        <li>
-                            Diagnostic de pannes sur smartphones et tablettes
-                        </li>
-
-                        <li>
-                            Réparation micro-électronique et mécanique
-                        </li>
-
-                        <li>
-                            Accueil client, diagnostic au comptoir et conseil
-                        </li>
-
-                        <li>
-                            Vente de produits et accessoires
-                        </li>
-
-                        <li>
-                            Gestion des interventions et suivi client
-                        </li>
-
-                    </ul>
-
-                    <h4>
-                        Compétences mobilisées
-                    </h4>
-
-                    <ul>
-
-                        <li>
-                            Réparation de terminaux mobiles
-                        </li>
-
-                        <li>
-                            Diagnostic précis
-                        </li>
-
-                        <li>
-                            Relation client
-                        </li>
-
-                        <li>
-                            Précision et minutie
-                        </li>
-
-                        <li>
-                            Gestion commerciale de base
-                        </li>
-
-                    </ul>
-
-                    <h4>
-                        Bilan
-                    </h4>
-
-                    <p>
-                        Premier contact professionnel avec la réparation électronique.
-                        Cette expérience m’a appris la rigueur, la précision et
-                        l’importance de la relation client.
-                    </p>
-
-                    <span class="tag">
-                        Téléphonie
-                    </span>
-
-                    <span class="tag">
-                        Diagnostic
-                    </span>
-
-                    <span class="tag">
-                        Précision
-                    </span>
-
-                </article>
-
-
-                <!-- EXPERIENCE 5 -->
-
-                <article class="card">
-
-                    <h3>
-                        5. Volontaire Stagiaire – Service Militaire Volontaire
-                    </h3>
-
-                    <p>
-                        <strong>
-                            SMV Brest – Février à Juillet 2026
-                        </strong>
-                    </p>
-
-                    <h4>
-                        Contexte et objectifs
-                    </h4>
-
-                    <p>
-                        Dispositif d’insertion socio-professionnelle destiné aux 18-25 ans.
-                        Objectif : développer des compétences transversales essentielles.
-                    </p>
-
-                    <h4>
-                        Apports de l’expérience
-                    </h4>
-
-                    <ul>
-
-                        <li>
-                            Vie en collectivité et respect des règles
-                        </li>
-
-                        <li>
-                            Discipline et ponctualité
-                        </li>
-
-                        <li>
-                            Travail en équipe et cohésion de groupe
-                        </li>
-
-                        <li>
-                            Activités de dépassement de soi
-                        </li>
-
-                        <li>
-                            Obtention de la certification SST
-                        </li>
-
-                    </ul>
-
-                    <h4>
-                        Compétences transversales développées
-                    </h4>
-
-                    <ul>
-
-                        <li>
-                            Discipline et ponctualité
-                        </li>
-
-                        <li>
-                            Travail en équipe et cohésion
-                        </li>
-
-                        <li>
-                            Résilience et dépassement de soi
-                        </li>
-
-                        <li>
-                            Respect des consignes et procédures
-                        </li>
-
-                        <li>
-                            Sens des responsabilités
-                        </li>
-
-                    </ul>
-
-                    <h4>
-                        Bilan
-                    </h4>
-
-                    <p>
-                        Le SMV a été une étape importante dans mon parcours.
-                        Il m’a permis de consolider des qualités humaines et
-                        professionnelles que je mets aujourd’hui au service
-                        de mon projet professionnel en informatique.
-                    </p>
-
-                    <span class="tag">
-                        Discipline
-                    </span>
-
-                    <span class="tag">
-                        Cohésion
-                    </span>
-
-                    <span class="tag">
-                        SST
-                    </span>
-
-                </article>
+                </div>
 
             </div>
 
@@ -1609,678 +1068,671 @@
     </section>
 
 
-    <!-- ====================================================== -->
-    <!-- RESEAU -->
-    <!-- ====================================================== -->
+    <!-- =========================
+         PHOTOS DES STAGES
+    ========================= -->
+
+    <section id="photos-stages">
+
+        <div class="inner">
+
+            <div class="title">
+
+                <h2>
+                    Photos des stages
+                </h2>
+
+                <p>
+                    Photos et preuves de mes différentes expériences
+                    professionnelles
+                </p>
+
+            </div>
+
+
+            <div class="stage-photos-box">
+
+                <h3>
+                    Mes expériences professionnelles
+                </h3>
+
+                <p>
+                    Cette rubrique présente différentes photos réalisées
+                    au cours de mes expériences professionnelles et de mes
+                    stages.
+                </p>
+
+
+                <img
+                    src="IMG_0954.JPG"
+                    alt="Photo d'une expérience professionnelle"
+                    class="stage-photo"
+                >
+
+
+                <img
+                    src="IMG_0955.JPG"
+                    alt="Photo d'une expérience professionnelle"
+                    class="stage-photo"
+                >
+
+
+                <img
+                    src="IMG_0957.JPG"
+                    alt="Photo d'une expérience professionnelle"
+                    class="stage-photo"
+                >
+
+
+                <img
+                    src="IMG_0960.JPG"
+                    alt="Photo d'une expérience professionnelle"
+                    class="stage-photo"
+                >
+
+
+                <img
+                    src="IMG_0962.JPG"
+                    alt="Photo d'une expérience professionnelle"
+                    class="stage-photo"
+                >
+
+
+                <img
+                    src="IMG_1060.JPG"
+                    alt="Photo d'une expérience professionnelle"
+                    class="stage-photo"
+                >
+
+
+                <img
+                    src="IMG_1061.JPG"
+                    alt="Photo d'une expérience professionnelle"
+                    class="stage-photo"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RESEAU
+    ========================= -->
 
     <section id="reseau">
 
-        <div class="title">
+        <div class="inner">
 
-            <h2>
-                Situation professionnelle : réseau RJ45
-            </h2>
+            <div class="title">
 
-            <p>
-                Câblage et test d’une liaison réseau
-            </p>
+                <h2>
+                    Réseau
+                </h2>
 
-        </div>
+                <p>
+                    Mes connaissances et expériences dans le domaine
+                    des réseaux informatiques
+                </p>
 
-
-        <div class="network-box">
-
-            <h3>
-                Contexte
-            </h3>
-
-            <p>
-                Lors d’un cours pratique au lycée Grieu, j’ai participé à une activité portant
-                sur l’installation et la vérification d’un réseau informatique. L’objectif était
-                de réaliser une liaison réseau entre deux salles et de vérifier son bon fonctionnement.
-            </p>
+            </div>
 
 
-            <h3>
-                Activités réalisées
-            </h3>
+            <div class="network-box">
 
-            <ol>
+                <h3>
+                    Situation professionnelle – Réseau RJ45
+                </h3>
 
-                <li>
-                    Faire passer des câbles RJ45 d’une salle à une autre.
-                </li>
+                <p>
+                    Réalisation d'une situation pratique autour du réseau
+                    informatique et du câblage RJ45.
+                </p>
 
-                <li>
-                    Relier les câbles aux équipements du réseau.
-                </li>
+                <p>
+                    Cette activité m'a permis de mettre en pratique mes
+                    connaissances concernant le câblage réseau, les
+                    connexions et l'organisation d'une installation réseau.
+                </p>
 
-                <li>
-                    Effectuer des tests de connexion.
-                </li>
-
-                <li>
-                    Intervenir au niveau de la baie de brassage.
-                </li>
-
-                <li>
-                    Tester les différentes connexions présentes dans la baie.
-                </li>
-
-                <li>
-                    Vérifier que le câblage et les connexions étaient fonctionnels.
-                </li>
-
-            </ol>
-
-
-            <h3>
-                Matériel utilisé
-            </h3>
-
-            <ul>
-
-                <li>
-                    Câbles réseau RJ45
-                </li>
-
-                <li>
-                    Baie de brassage
-                </li>
-
-                <li>
-                    Équipements réseau
-                </li>
-
-                <li>
-                    Testeur de câble réseau
-                </li>
-
-                <li>
-                    Ordinateur pour vérifier la connexion
-                </li>
-
-            </ul>
-
-
-            <h3>
-                Compétences mises en œuvre
-            </h3>
-
-            <ul>
-
-                <li>
-                    Réaliser et organiser un câblage réseau
-                </li>
-
-                <li>
-                    Identifier les ports d’une baie de brassage
-                </li>
-
-                <li>
-                    Tester une liaison réseau
-                </li>
-
-                <li>
-                    Vérifier le bon fonctionnement d’une connexion
-                </li>
-
-                <li>
-                    Respecter les consignes
-                </li>
-
-                <li>
-                    Travailler de manière organisée et méthodique
-                </li>
-
-            </ul>
-
-
-            <h3>
-                Difficultés rencontrées et bilan
-            </h3>
-
-            <p>
-                La principale difficulté était d’identifier correctement les câbles et
-                les ports correspondants dans la baie de brassage.
-                Les tests m’ont permis de repérer les problèmes éventuels et de les corriger.
-            </p>
-
-            <p>
-                Cette activité m’a permis de mieux comprendre comment est réalisé le câblage
-                d’un réseau informatique et de développer mes compétences pratiques dans les réseaux.
-            </p>
+            </div>
 
         </div>
 
     </section>
 
 
-    <!-- ====================================================== -->
-    <!-- COMPETENCES -->
-    <!-- ====================================================== -->
+    <!-- =========================
+         COMPETENCES
+    ========================= -->
 
     <section id="competences">
 
-        <div class="title">
+        <div class="inner">
 
-            <h2>
-                Mes compétences
-            </h2>
+            <div class="title">
 
-            <p>
-                Compétences techniques et qualités professionnelles
-            </p>
+                <h2>
+                    Compétences
+                </h2>
 
-        </div>
-
-
-        <div class="skill-groups">
-
-
-            <div class="skill-group">
-
-                <h3>
-                    Compétences techniques
-                </h3>
-
-                <div class="skill-list">
-
-                    <span class="skill-pill">
-                        Diagnostic de pannes
-                    </span>
-
-                    <span class="skill-pill">
-                        Maintenance matérielle
-                    </span>
-
-                    <span class="skill-pill">
-                        Maintenance logicielle
-                    </span>
-
-                    <span class="skill-pill">
-                        Windows
-                    </span>
-
-                    <span class="skill-pill">
-                        Office 365
-                    </span>
-
-                    <span class="skill-pill">
-                        Déploiement logiciel
-                    </span>
-
-                    <span class="skill-pill">
-                        Remplacement de composants
-                    </span>
-
-                    <span class="skill-pill">
-                        Réseau local
-                    </span>
-
-                    <span class="skill-pill">
-                        Câblage RJ45
-                    </span>
-
-                    <span class="skill-pill">
-                        Baie de brassage
-                    </span>
-
-                    <span class="skill-pill">
-                        Réparation mobile
-                    </span>
-
-                </div>
+                <p>
+                    Mes compétences techniques et professionnelles
+                </p>
 
             </div>
 
 
-            <div class="skill-group">
+            <div class="skills-grid">
 
-                <h3>
-                    Compétences transversales
-                </h3>
 
-                <div class="skill-list">
+                <div class="skill-card">
 
-                    <span class="skill-pill">
-                        Travail en équipe
-                    </span>
+                    <h3>
+                        Informatique
+                    </h3>
 
-                    <span class="skill-pill">
-                        Autonomie
-                    </span>
+                    <ul>
 
-                    <span class="skill-pill">
-                        Respect des consignes
-                    </span>
+                        <li>
+                            Diagnostic informatique
+                        </li>
 
-                    <span class="skill-pill">
-                        Réactivité
-                    </span>
+                        <li>
+                            Maintenance matérielle
+                        </li>
 
-                    <span class="skill-pill">
-                        Fiabilité
-                    </span>
+                        <li>
+                            Maintenance logicielle
+                        </li>
 
-                    <span class="skill-pill">
-                        Écoute active
-                    </span>
+                        <li>
+                            Installation et déploiement
+                        </li>
 
-                    <span class="skill-pill">
-                        Ponctualité
-                    </span>
+                        <li>
+                            Composants informatiques
+                        </li>
 
-                    <span class="skill-pill">
-                        Sérieux
-                    </span>
+                    </ul>
 
-                    <span class="skill-pill">
-                        Organisation
-                    </span>
+                </div>
 
-                    <span class="skill-pill">
-                        Sens des responsabilités
-                    </span>
 
-                    <span class="skill-pill">
-                        Support utilisateur
-                    </span>
+                <div class="skill-card">
 
-                    <span class="skill-pill">
-                        Relation client
-                    </span>
+                    <h3>
+                        Systèmes & Réseaux
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Windows
+                        </li>
+
+                        <li>
+                            Office 365
+                        </li>
+
+                        <li>
+                            Réseaux LAN
+                        </li>
+
+                        <li>
+                            Câblage RJ45
+                        </li>
+
+                        <li>
+                            Panneaux de brassage
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>
+                        Autres compétences
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Réparation de téléphones
+                        </li>
+
+                        <li>
+                            Maintenance électronique
+                        </li>
+
+                        <li>
+                            Travail en équipe
+                        </li>
+
+                        <li>
+                            Autonomie
+                        </li>
+
+                        <li>
+                            SST valide jusqu'au 26/05/2028
+                        </li>
+
+                    </ul>
 
                 </div>
 
             </div>
-
-        </div>
-
-
-        <div class="certification">
-
-            <strong>
-                Certification :
-            </strong>
-
-            Sauveteur Secouriste du Travail (SST) –
-            validité jusqu’au 26/05/2028.
 
         </div>
 
     </section>
 
 
-    <!-- ====================================================== -->
-    <!-- PROJETS PERSONNELS -->
-    <!-- ====================================================== -->
+    <!-- =========================
+         PROJETS PERSONNELS
+    ========================= -->
 
     <section id="projets-personnels">
 
-        <div class="title">
+        <div class="inner">
 
-            <h2>
-                Projets personnels
-            </h2>
+            <div class="title">
 
-            <p>
-                Mes projets réalisés en autonomie
-            </p>
+                <h2>
+                    Projets personnels
+                </h2>
 
-        </div>
+                <p>
+                    Mes projets réalisés en autonomie
+                </p>
 
+            </div>
 
-        <!-- ==================== BET ARENA ==================== -->
 
-        <div class="project-box">
+            <!-- BET ARENA -->
 
-            <h3>
-                BET ARENA
-            </h3>
+            <div class="project-box">
 
-            <p>
-                <strong>
-                    Création d'une application de paris sportifs
-                </strong>
-            </p>
+                <h3>
+                    BET ARENA
+                </h3>
 
-            <p>
-                <strong>
-                    Projet personnel — Réalisation individuelle
-                </strong>
-            </p>
+                <p>
+                    <strong>
+                        Création d'une application de paris sportifs
+                    </strong>
+                </p>
 
-            <p>
-                Conception et développement de l'application BET ARENA,
-                une application de simulation de paris sportifs.
-            </p>
+                <p>
+                    <strong>
+                        Projet personnel — Réalisation individuelle
+                    </strong>
+                </p>
 
-            <ul>
+                <p>
+                    Conception et développement de l'application
+                    BET ARENA, une application de simulation de paris
+                    sportifs.
+                </p>
 
-                <li>
-                    Développement en Java
-                </li>
 
-                <li>
-                    Utilisation d'une base de données SQLite
-                </li>
+                <ul>
 
-                <li>
-                    Gestion des utilisateurs et des soldes
-                </li>
+                    <li>
+                        Développement en Java
+                    </li>
 
-                <li>
-                    Gestion des matchs, cotes, tickets et résultats
-                </li>
+                    <li>
+                        Utilisation d'une base de données SQLite
+                    </li>
 
-                <li>
-                    Création d'une interface utilisateur et d'une interface administrateur
-                </li>
+                    <li>
+                        Gestion des utilisateurs et des soldes
+                    </li>
 
-                <li>
-                    Tests et correction des problèmes de lancement sous Linux et Windows
-                </li>
+                    <li>
+                        Gestion des matchs, cotes, tickets et résultats
+                    </li>
 
-            </ul>
+                    <li>
+                        Création d'une interface utilisateur et d'une
+                        interface administrateur
+                    </li>
 
-            <p>
-                <strong>
-                    Technologies :
-                </strong>
+                    <li>
+                        Tests et correction des problèmes de lancement
+                        sous Linux et Windows
+                    </li>
 
-                Java, SQLite, HTML, CSS, JavaScript
-            </p>
+                </ul>
 
-        </div>
 
+                <p>
+                    <strong>
+                        Technologies :
+                    </strong>
 
-        <!-- ==================== PHOTOS ==================== -->
+                    Java, SQLite, HTML, CSS, JavaScript
+                </p>
 
-        <div class="photos-title">
+            </div>
 
-            <h3>
-                Photos du projet BET ARENA
-            </h3>
 
-            <p>
-                Captures et preuves de réalisation
-            </p>
+            <!-- PHOTOS BET ARENA -->
 
-        </div>
+            <div class="photos-title">
 
+                <h3>
+                    Photos du projet BET ARENA
+                </h3>
 
-        <img
-            src="000.png"
-            alt="Capture d'écran de BET ARENA"
-            class="betarena-photo"
-        >
+                <p>
+                    Captures et preuves de réalisation
+                </p>
 
+            </div>
 
-        <img
-            src="bet arena mode sombre.png"
-            alt="Mode sombre de BET ARENA"
-            class="betarena-photo"
-        >
 
+            <img
+                src="000.png"
+                alt="Capture d'écran de BET ARENA"
+                class="betarena-photo"
+            >
 
-        <img
-            src="bet arena profil.png"
-            alt="Profil BET ARENA"
-            class="betarena-photo"
-        >
 
+            <img
+                src="bet arena mode sombre.png"
+                alt="Mode sombre de BET ARENA"
+                class="betarena-photo"
+            >
 
-        <img
-            src="bet arena serveur.png"
-            alt="Serveur BET ARENA"
-            class="betarena-photo"
-        >
 
+            <img
+                src="Bet Arena profil.png"
+                alt="Profil BET ARENA"
+                class="betarena-photo"
+            >
 
-        <img
-            src="liason du serveur.png"
-            alt="Liaison du serveur BET ARENA"
-            class="betarena-photo"
-        >
 
+            <img
+                src="Bet Arena serveur.png"
+                alt="Serveur BET ARENA"
+                class="betarena-photo"
+            >
 
-        <img
-            src="mode admin.png"
-            alt="Mode administrateur BET ARENA"
-            class="betarena-photo"
-        >
 
+            <img
+                src="liason du serveur.png"
+                alt="Liaison du serveur BET ARENA"
+                class="betarena-photo"
+            >
 
-        <img
-            src="serveur py.png"
-            alt="Serveur Python BET ARENA"
-            class="betarena-photo"
-        >
 
+            <img
+                src="mode admin.png"
+                alt="Mode administrateur BET ARENA"
+                class="betarena-photo"
+            >
 
-        <img
-            src="taliscale.png"
-            alt="Taliscale BET ARENA"
-            class="betarena-photo"
-        >
 
+            <img
+                src="serveur py.png"
+                alt="Serveur Python BET ARENA"
+                class="betarena-photo"
+            >
 
-        <!-- ==================== COMPTE RENDU ==================== -->
 
-        <div class="report">
+            <img
+                src="taliscale.png"
+                alt="Taliscale BET ARENA"
+                class="betarena-photo"
+            >
 
-            <h3>
-                Compte rendu du projet BET ARENA
-            </h3>
 
-            <p>
-                BET ARENA est un projet personnel réalisé en autonomie dans le but
-                de concevoir une application de simulation de paris sportifs.
-            </p>
+            <!-- COMPTE RENDU BET ARENA -->
 
-            <p>
-                Le projet a permis de travailler sur le développement en Java,
-                la gestion d'une base de données SQLite ainsi que la création
-                d'une interface utilisateur et d'une interface administrateur.
-            </p>
+            <div class="report">
 
+                <h3>
+                    Compte rendu du projet BET ARENA
+                </h3>
 
-            <h3>
-                Déroulement et difficultés rencontrées
-            </h3>
+                <p>
+                    BET ARENA est un projet personnel réalisé en autonomie
+                    dans le but de concevoir une application de simulation
+                    de paris sportifs.
+                </p>
 
-            <p>
-                Le développement de BET ARENA a commencé par la mise en place
-                de l'application et de la base de données SQLite.
-            </p>
+                <p>
+                    Le projet a permis de travailler sur le développement
+                    en Java, la gestion d'une base de données SQLite ainsi
+                    que la création d'une interface utilisateur et d'une
+                    interface administrateur.
+                </p>
 
-            <p>
-                Plusieurs tests ont ensuite été réalisés afin de vérifier le
-                fonctionnement de l'application et son lancement sur différents
-                environnements.
-            </p>
 
-            <p>
-                Une difficulté rencontrée concernait le lancement de l'application
-                sous Linux et Windows. Le chemin utilisé pour accéder à la base de
-                données devait être adapté afin que l'application puisse fonctionner
-                correctement sur les deux systèmes.
-            </p>
+                <h3>
+                    Déroulement et difficultés rencontrées
+                </h3>
 
+                <p>
+                    Le développement de BET ARENA a commencé par la mise
+                    en place de l'application et de la base de données
+                    SQLite.
+                </p>
 
-            <h3>
-                Technologies utilisées
-            </h3>
+                <p>
+                    Plusieurs tests ont ensuite été réalisés afin de
+                    vérifier le fonctionnement de l'application et son
+                    lancement sur différents environnements.
+                </p>
 
-            <ul>
+                <p>
+                    Une difficulté rencontrée concernait le lancement de
+                    l'application sous Linux et Windows. Le chemin utilisé
+                    pour accéder à la base de données devait être adapté
+                    afin que l'application puisse fonctionner correctement
+                    sur les deux systèmes.
+                </p>
 
-                <li>
-                    Java
-                </li>
 
-                <li>
-                    SQLite
-                </li>
+                <h3>
+                    Technologies utilisées
+                </h3>
 
-                <li>
-                    HTML
-                </li>
+                <ul>
 
-                <li>
-                    CSS
-                </li>
+                    <li>
+                        Java
+                    </li>
 
-                <li>
-                    JavaScript
-                </li>
+                    <li>
+                        SQLite
+                    </li>
 
-            </ul>
+                    <li>
+                        HTML
+                    </li>
 
+                    <li>
+                        CSS
+                    </li>
 
-            <h3>
-                Bilan personnel
-            </h3>
+                    <li>
+                        JavaScript
+                    </li>
 
-            <p>
-                Ce projet m'a permis de mettre en pratique mes connaissances
-                en développement informatique et en gestion de bases de données.
-            </p>
+                </ul>
 
-            <p>
-                J'ai également pu développer mon autonomie, apprendre à résoudre
-                des problèmes techniques et effectuer des tests sur différents
-                environnements.
-            </p>
+
+                <h3>
+                    Bilan personnel
+                </h3>
+
+                <p>
+                    Ce projet m'a permis de mettre en pratique mes
+                    connaissances en développement informatique et en
+                    gestion de bases de données.
+                </p>
+
+                <p>
+                    J'ai également pu développer mon autonomie, apprendre
+                    à résoudre des problèmes techniques et effectuer des
+                    tests sur différents environnements.
+                </p>
+
+            </div>
 
         </div>
 
     </section>
 
 
-    <!-- ====================================================== -->
-    <!-- BILAN -->
-    <!-- ====================================================== -->
+    <!-- =========================
+         BILAN
+    ========================= -->
 
     <section id="bilan">
 
-        <div class="title">
+        <div class="inner">
 
-            <h2>
-                Bilan et perspectives
-            </h2>
+            <div class="title">
 
-            <p>
-                Mon projet professionnel
-            </p>
-
-        </div>
-
-
-        <div class="perspectives">
-
-
-            <div class="perspective-card">
-
-                <h3>
+                <h2>
                     Bilan
-                </h3>
+                </h2>
 
                 <p>
-                    Mon parcours m’a permis d’acquérir une expérience concrète
-                    dans le support informatique, la maintenance matérielle et
-                    la relation utilisateur. Les stages en entreprise et en
-                    collectivité, ainsi que le SMV, m’ont apporté de la rigueur,
-                    de l’autonomie et un vrai sens du travail en équipe.
+                    Mon bilan personnel et professionnel
                 </p>
 
             </div>
 
 
-            <div class="perspective-card">
+            <div class="bilan-box">
 
                 <h3>
-                    Perspectives
+                    Mon parcours
                 </h3>
 
                 <p>
-                    En BTS SIO, je souhaite approfondir mes compétences en
-                    administration de systèmes, en réseaux et en support avancé.
-                    Mon objectif est de devenir un technicien informatique
-                    polyvalent, capable d’intervenir efficacement sur le matériel,
-                    les systèmes et auprès des utilisateurs.
+                    Mon parcours m'a permis de développer des compétences
+                    dans le domaine de l'informatique, notamment dans la
+                    maintenance, les systèmes et réseaux ainsi que le
+                    développement.
+                </p>
+
+
+                <h3>
+                    Mes objectifs
+                </h3>
+
+                <p>
+                    Je souhaite continuer à développer mes compétences
+                    informatiques et acquérir davantage d'expérience dans
+                    le domaine des systèmes, des réseaux et du développement.
+                </p>
+
+
+                <h3>
+                    Ce que mes expériences m'ont apporté
+                </h3>
+
+                <p>
+                    Mes différentes expériences professionnelles m'ont
+                    permis de développer mon autonomie, ma rigueur et ma
+                    capacité à résoudre des problèmes techniques.
                 </p>
 
             </div>
-
-        </div>
-
-
-        <div class="network-box" style="margin-top: 25px;">
-
-            <h3>
-                Mon objectif professionnel
-            </h3>
-
-            <p>
-                Je suis motivé, sérieux et prêt à m’investir pleinement dans
-                mon parcours de professionnalisation. Je souhaite continuer
-                à développer mes compétences dans le câblage, la configuration,
-                le dépannage et la maintenance des réseaux informatiques.
-            </p>
 
         </div>
 
     </section>
 
 
-    <!-- ====================================================== -->
-    <!-- CONTACT -->
-    <!-- ====================================================== -->
+    <!-- =========================
+         CONTACT
+    ========================= -->
 
     <section id="contact">
 
-        <div class="contact-box">
+        <div class="inner">
 
-            <h2>
-                Contactez-moi
-            </h2>
+            <div class="title">
 
-            <p>
-                Pour une opportunité, une question ou un échange professionnel.
-            </p>
+                <h2>
+                    Contact
+                </h2>
 
-            <a
-                href="mailto:sofian.bechrir1@gmail.com"
-                class="btn"
-            >
-                Envoyer un email
-            </a>
+                <p>
+                    N'hésitez pas à me contacter
+                </p>
 
-            <a
-                href="tel:+33695191499"
-                class="btn"
-            >
-                Appeler
-            </a>
+            </div>
+
+
+            <div class="contact-final">
+
+                <h3>
+                    Sofian Bechrir
+                </h3>
+
+                <p>
+                    BTS SIO – Services Informatiques aux Organisations
+                </p>
+
+                <p>
+                    📧
+                    <a href="mailto:sofian.bechrir1@gmail.com">
+                        sofian.bechrir1@gmail.com
+                    </a>
+                </p>
+
+                <p>
+                    📞
+                    <a href="tel:+33695191499">
+                        +33 06 95 19 14 99
+                    </a>
+                </p>
+
+                <p>
+                    📍 76160 Darnétal
+                </p>
+
+                <p>
+                    🚗 Permis B
+                </p>
+
+            </div>
 
         </div>
 
     </section>
 
 
-    <!-- ====================================================== -->
-    <!-- FOOTER -->
-    <!-- ====================================================== -->
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer>
 
         <p>
-            © 2026 Sofian Bechrir — Portfolio BTS SIO
+            © 2026 Sofian Bechrir
+        </p>
+
+        <p class="small">
+            Portfolio BTS SIO – Informatique, Systèmes & Réseaux
         </p>
 
     </footer>
 
 
 </body>
+
 </html>
