@@ -304,6 +304,16 @@
             border-radius: 14px;
             padding: 30px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+
+            /* 2 photos côte à côte */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .stage-photos-box h3,
+        .stage-photos-box > p {
+            grid-column: 1 / -1;
         }
 
         .stage-photos-box h3 {
@@ -316,17 +326,14 @@
             margin-bottom: 25px;
         }
 
-        /* PHOTOS RÉDUITES */
-
         .stage-photo {
-            width: 55%;
-            max-width: 500px;
-            height: auto;
+            width: 100%;
+            max-width: 450px;
+            height: 300px;
+            margin: auto;
             display: block;
-            margin: 25px auto;
-            border-radius: 12px;
             object-fit: contain;
-            box-sizing: border-box;
+            border-radius: 12px;
             border: 1px solid var(--border);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             background: white;
@@ -437,16 +444,25 @@
             font-weight: bold;
         }
 
-        /* PHOTOS BET ARENA RÉDUITES */
+        /* =========================
+           PHOTOS BET ARENA
+        ========================== */
+
+        .betarena-photos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
 
         .betarena-photo {
-            width: 55%;
-            max-width: 500px;
-            height: auto;
+            width: 100%;
+            max-width: 450px;
+            height: 300px;
+            margin: auto;
             display: block;
-            margin: 25px auto;
-            border-radius: 12px;
             object-fit: contain;
+            border-radius: 12px;
             border: 1px solid var(--border);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             background: white;
@@ -557,14 +573,30 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .stage-photo,
+            .stage-photo {
+                width: 100%;
+                max-width: 450px;
+            }
+
             .betarena-photo {
-                width: 75%;
-                max-width: 500px;
+                width: 100%;
+                max-width: 450px;
             }
 
             .hero h1 {
                 font-size: 42px;
+            }
+        }
+
+        /* Sur petit écran : une photo par ligne */
+        @media (max-width: 600px) {
+
+            .stage-photos-box {
+                grid-template-columns: 1fr;
+            }
+
+            .betarena-photos {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -606,10 +638,14 @@
                 padding-left: 50px;
             }
 
-            .stage-photo,
+            .stage-photo {
+                width: 100%;
+                max-width: 450px;
+            }
+
             .betarena-photo {
-                width: 90%;
-                max-width: none;
+                width: 100%;
+                max-width: 450px;
             }
 
             .stage-photos-box,
@@ -812,8 +848,6 @@
         <div class="experience-grid">
 
 
-            <!-- MAIRIE JUIN 2026 -->
-
             <div class="experience-card">
 
                 <h3>Mairie de Darnétal</h3>
@@ -850,8 +884,6 @@
             </div>
 
 
-            <!-- MAIRIE JANVIER 2026 -->
-
             <div class="experience-card">
 
                 <h3>Mairie de Darnétal</h3>
@@ -887,8 +919,6 @@
             </div>
 
 
-            <!-- KVIA -->
-
             <div class="experience-card">
 
                 <h3>Kvia — Rouen</h3>
@@ -923,8 +953,6 @@
 
             </div>
 
-
-            <!-- AXEL TELECOM -->
 
             <div class="experience-card">
 
@@ -1342,58 +1370,60 @@
             </ul>
 
 
-            <!-- PHOTOS BET ARENA -->
+            <!-- PHOTOS BET ARENA : 2 PAR 2 -->
 
-            <img
-                src="000.png"
-                alt="Bet Arena"
-                class="betarena-photo"
-            >
+            <div class="betarena-photos">
 
-            <img
-                src="bet arena mode sombre.png"
-                alt="Bet Arena mode sombre"
-                class="betarena-photo"
-            >
+                <img
+                    src="000.png"
+                    alt="Bet Arena"
+                    class="betarena-photo"
+                >
 
-            <img
-                src="Bet Arena profil.png"
-                alt="Profil Bet Arena"
-                class="betarena-photo"
-            >
+                <img
+                    src="bet arena mode sombre.png"
+                    alt="Bet Arena mode sombre"
+                    class="betarena-photo"
+                >
 
-            <img
-                src="Bet Arena serveur.png"
-                alt="Serveur Bet Arena"
-                class="betarena-photo"
-            >
+                <img
+                    src="Bet Arena profil.png"
+                    alt="Profil Bet Arena"
+                    class="betarena-photo"
+                >
 
-            <img
-                src="liason du serveur.png"
-                alt="Liaison du serveur Bet Arena"
-                class="betarena-photo"
-            >
+                <img
+                    src="Bet Arena serveur.png"
+                    alt="Serveur Bet Arena"
+                    class="betarena-photo"
+                >
 
-            <img
-                src="mode admin.png"
-                alt="Mode administrateur Bet Arena"
-                class="betarena-photo"
-            >
+                <img
+                    src="liason du serveur.png"
+                    alt="Liaison du serveur Bet Arena"
+                    class="betarena-photo"
+                >
 
-            <img
-                src="serveur py.png"
-                alt="Serveur Python Bet Arena"
-                class="betarena-photo"
-            >
+                <img
+                    src="mode admin.png"
+                    alt="Mode administrateur Bet Arena"
+                    class="betarena-photo"
+                >
 
-            <img
-                src="taliscale.png"
-                alt="Taliscale Bet Arena"
-                class="betarena-photo"
-            >
+                <img
+                    src="serveur py.png"
+                    alt="Serveur Python Bet Arena"
+                    class="betarena-photo"
+                >
 
+                <img
+                    src="taliscale.png"
+                    alt="Taliscale Bet Arena"
+                    class="betarena-photo"
+                >
 
-            <!-- RAPPORT -->
+            </div>
+
 
             <div class="report-box">
 
